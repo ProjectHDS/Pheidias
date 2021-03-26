@@ -1,0 +1,24 @@
+name: pack
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run pack.sh
+        run: bash pack.sh
+
+      - name: Upload a Build Artifact
+      - uses: actions/upload-artifact@v2
+        with:
+         name: Pheidias
+         path: artifacts
