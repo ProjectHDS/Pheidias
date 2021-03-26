@@ -6,4 +6,4 @@ ZIP_FILE_NAME="Pheidias UI Pack-build${GITHUB_RUN_NUMBER}.zip"
 [ "${PROJECT_DIR}" != "${PWD}" ] && cd "${PROJECT_DIR}"
 
 zip -r "${ZIP_FILE_NAME}" -xi assets icon.png pack.mcmeta
-mv {,artifacts/}${ZIP_FILE_NAME}
+mv {,artifacts/}"${ZIP_FILE_NAME}"
